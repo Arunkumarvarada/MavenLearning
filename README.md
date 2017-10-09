@@ -46,7 +46,7 @@ install — install the package into the local repository
 
 deploy — copies the final package to the remote repository and does not run them
 
-================================================================================
+
 Useful command line options
 ===========================================================================================
 -DskipTests=true compiles the tests, but skips
