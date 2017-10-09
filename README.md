@@ -1,8 +1,7 @@
 # MavenLearning
 
 
-Getting started with Maven
-==========================================
+
 Project Creation:
 ==================
 Create Java project
@@ -74,3 +73,40 @@ running them
 
 -ff, --fail-fast stop at first failure
 
+Useful Plugins:
+===========================================================================================
+
+Help plugin — used to get relative information about a project or the system.
+
+mvn help:describe describes the attributes of a plugin
+
+mvn help:effective-pom displays the effective POM as an XML for the current build, with the active profiles factored in.
+
+Dependency plugin — provides the capability to manipulate artifacts.
+
+mvn dependency:analyze analyzes the dependencies of this project
+
+mvn dependency:tree prints a tree of dependencies
+
+Compiler plugin — compiles your java code.
+
+Set language level with the following configuration:
+
+<plugin>
+ <groupId>org.apache.maven.plugins</groupId>
+ <artifactId>maven-compiler-plugin</
+ artifactId>
+ <version>3.6.1</version>
+ <configuration>
+ <source>1.8</source>
+ <target>1.8</target>
+ </configuration>
+</plugin>
+
+Version plugin — used when you want to manage the versions of artifacts in a project's POM.
+
+Wrapper plugin — an easy way to ensure a user of your Maven build has everything that is necessary.
+
+Spring Boot plugin — compiles your Spring Boot app, build an executable fat jar.
+
+Exec — amazing general purpose plugin, can run arbitrary commands :) 
