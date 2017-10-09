@@ -110,3 +110,51 @@ Wrapper plugin — an easy way to ensure a user of your Maven build has everythi
 Spring Boot plugin — compiles your Spring Boot app, build an executable fat jar.
 
 Exec — amazing general purpose plugin, can run arbitrary commands :) 
+
+Maven Dependency Plugins Overview:
+=========================================
+
+The Dependency plugin has several goals:
+
+dependency:analyze analyzes the dependencies of this project and determines which are: used and declared; used and undeclared; unused and declared.
+
+dependency:analyze-dep-mgt analyzes your projects dependencies and lists mismatches between resolved dependencies and those listed in your dependencyManagement section.
+
+
+dependency:analyze-only is the same as analyze, but is meant to be bound in a pom. It does not fork the build and execute test-compile.
+
+dependency:analyze-report analyzes the dependencies of this project and produces a report that summarises which are: used and declared; used and undeclared; unused and declared.
+
+dependency:analyze-duplicate analyzes the <dependencies/> and <dependencyManagement/> tags in the pom.xml and determines the duplicate declared dependencies.
+
+dependency:build-classpath tells Maven to output the path of the dependencies from the local repository in a classpath format to be used in java -cp. The classpath file may also be attached and installed/deployed along with the main artifact.
+
+dependency:copy takes a list of artifacts defined in the plugin configuration section and copies them to a specified location, renaming them or stripping the version if desired. This goal can resolve the artifacts from remote repositories if they don't exist in either the local repository or the reactor.
+
+dependency:copy-dependencies takes the list of project direct dependencies and optionally transitive dependencies and copies them to a specified location, stripping the version if desired. This goal can also be run from the command line.
+
+dependency:display-ancestors displays all ancestor POMs of the project. This may be useful in a continuous integration system where you want to know all parent poms of the project. This goal can also be run from the command line.
+
+dependency:get resolves a single artifact, eventually transitively, from a specified remote repository.
+
+dependency:go-offline tells Maven to resolve everything this project is dependent on (dependencies, plugins, reports) in preparation for going offline.
+
+dependency:list alias for resolve that lists the dependencies for this project.
+
+dependency:list-repositories displays all project dependencies and then lists the repositories used.
+
+dependency:properties set a property for each project dependency containing the to the artifact on the file system.
+
+dependency:purge-local-repository tells Maven to clear dependency artifact files out of the local repository, and optionally re-resolve them.
+
+dependency:resolve tells Maven to resolve all dependencies and displays the version. JAVA 9 NOTE: will display the module name when running with Java 9.
+
+dependency:resolve-plugins tells Maven to resolve plugins and their dependencies.
+
+dependency:sources tells Maven to resolve all dependencies and their source attachments, and displays the version.
+
+dependency:tree displays the dependency tree for this project.
+
+dependency:unpack like copy but unpacks.
+
+dependency:unpack-dependencies like copy-dependencies but unpacks.
