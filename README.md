@@ -47,3 +47,30 @@ install — install the package into the local repository
 deploy — copies the final package to the remote repository and does not run them
 
 ================================================================================
+Useful command line options
+===========================================================================================
+-DskipTests=true compiles the tests, but skips
+
+running them
+-Dmaven.test.skip=true skips compiling the tests and does not run them
+
+-T - number of threads:
+ -T 4 is a decent default
+ -T 2C - 2 threads per CPU
+ 
+-rf, --resume-from resume build from the specified project
+
+-pl, --projects makes Maven build only specified modules and not the whole project
+
+-am, --also-make makes Maven figure out what modules out target depends on and build them too
+
+-o, --offline work offline
+
+-X, --debug enable debug output
+
+-P, --activate-profiles comma-delimited list of profiles to activate
+
+-U, --update-snapshots forces a check for updated dependencies on remote repositories
+
+-ff, --fail-fast stop at first failure
+
